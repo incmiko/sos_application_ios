@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  CrowdSensing
+//
+//  Created by Mike on 2014. 11. 23..
+//  Copyright (c) 2014. Magyar Miklós. All rights reserved.
+//
+
+#ifndef CrowdSensing_PrefixHeader_pch
+#define CrowdSensing_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define TEST_MODE YES
+
+#define TestLog(x, ...) \
+if (TEST_MODE) NSLog((x), ##__VA_ARGS__);
+
+#define NOTIFICATION_ACCELERATION_CHANGED @"noti_acceleration_changed"
+#define NOTIFICATION_PHONEPOSITION_CHANGED @"noti_phoneposition_changed"
+#define NOTIFICATION_DEGREE_TO_NORTH_CHANGED @"noti_degree_to_north_changed"
+
+#define NOTIFICATION_RECORDING_STOPPED @"noti_recording_stopped"
+
+#define SENSOR_MAGNETOMETER @"SENSOR_MAGNETOMETER"
+#define SENSOR_ACCELEROMETER @"SENSOR_ACCELEROMETER"
+#define SENSOR_GYROSCOPE @"SENSOR_GYROSCOPE"
+
+typedef enum {
+    ApplicationStatusWhenPushRecieved_NoPush,
+    ApplicationStatusWhenPushRecieved_NotRunningOrActuallyStarting,
+    ApplicationStatusWhenPushRecieved_Background,
+    ApplicationStatusWhenPushRecieved_Running
+}ApplicationStatusWhenPushRecieved;
+
+#endif
